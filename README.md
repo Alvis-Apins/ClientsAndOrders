@@ -1,6 +1,9 @@
 <pre>
 Web application that handles clients, orders and deliveries from MySql 
-database and displays results in various tables.
+database and displays results in various tables. 
+
+MVC pattern.
+For asynchronous display I have used AJAX javascript.
 
 Neccessary tools:
 1. Laravel 9
