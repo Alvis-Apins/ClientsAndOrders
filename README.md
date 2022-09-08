@@ -21,3 +21,5 @@ after cloning project locally
 </pre>
 <pre> If you want to run this program with your own database, 
 check if database table and column names match</pre>
+
+![Screenshot from 2022-09-08 12-44-55](https://user-images.githubusercontent.com/104777801/189091508-6cce97c9-05fb-459a-af37-16699cd4972d.png)
