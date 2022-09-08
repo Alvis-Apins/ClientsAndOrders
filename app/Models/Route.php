@@ -9,7 +9,8 @@ class Route extends Model
 {
     use HasFactory;
 
-    public function delivery(){
+    public function delivery()
+    {
         return $this->hasMany(Delivery::class);
     }
 

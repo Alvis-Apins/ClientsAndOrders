@@ -9,11 +9,13 @@ class Address extends Model
 {
     use HasFactory;
 
-    public function client(){
+    public function client()
+    {
         return $this->belongsTo(Client::class);
     }
 
-    public function delivery(){
+    public function delivery()
+    {
         return $this->hasMany(Delivery::class);
     }
 }

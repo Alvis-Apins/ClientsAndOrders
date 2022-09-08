@@ -6,5 +6,5 @@ use Illuminate\Support\Collection;
 
 interface Report
 {
-    public function getReportData():array;
+    public function getReportData(): array;
 }

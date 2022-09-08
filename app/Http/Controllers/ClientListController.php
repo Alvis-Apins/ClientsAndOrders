@@ -30,8 +30,7 @@ class ClientListController extends Controller
         return response()->json(['response' => $addresses]);
     }
 
-
-    public function redirect(Request $request):RedirectResponse
+    public function redirect(Request $request): RedirectResponse
     {
         $this->validate($request, [
             'client' => ['string']
@@ -40,9 +39,6 @@ class ClientListController extends Controller
         $request->session()->put('key', 'value');
         session(['key' => $request->client]);
 
-//        echo "<pre>";
-//        var_dump($request->session()->all());
-//        die;
         return redirect('/clients-deliveries');
     }
 }

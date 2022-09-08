@@ -44,11 +44,6 @@ class LastOrderRepository implements Report
             ->get();
         $clientsLastOrders = json_decode($clientsLastOrders);
 
-
-//        echo "<pre>";
-//        var_dump($clientsLastOrders);
-//        die;
-
         $clients = [];
         foreach ($clientsLastOrders as $lastOrder) {
             $clients[] = new ExtensiveClientInfo(

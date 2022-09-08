@@ -9,7 +9,8 @@ class DeliveryLine extends Model
 {
     use HasFactory;
 
-    public function delivery(){
+    public function delivery()
+    {
         return $this->belongsTo(Delivery::class);
     }
 

@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Repositories\InactiveClientRepository;
 use App\Services\InactiveClientService;
-use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class InactiveClientsController extends Controller
 {
-    public function index(InactiveClientService $inactiveClientService)
+    public function index(InactiveClientService $inactiveClientService): View
     {
         $clients = $inactiveClientService->execute();
 

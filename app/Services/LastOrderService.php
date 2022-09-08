@@ -13,7 +13,7 @@ class LastOrderService
         $this->lastOrderRepository = $lastOrderRepository;
     }
 
-    public function execute():array
+    public function execute(): array
     {
         return $this->lastOrderRepository->getReportData();
     }

@@ -13,7 +13,7 @@ class ClientsDeliveriesService
         $this->clientsDeliveriesRepository = $clientsDeliveriesRepository;
     }
 
-    public function execute():array
+    public function execute(): array
     {
         return $this->clientsDeliveriesRepository->getReportData();
     }

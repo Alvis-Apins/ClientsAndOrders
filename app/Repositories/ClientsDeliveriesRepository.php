@@ -9,11 +9,10 @@ class ClientsDeliveriesRepository implements Report
 {
     public function getReportData(): array
     {
-        $value = (int) session('key');
-//        var_dump($value);
-//        die;
+        $value = (int)session('key');
+
         $client = DB::table('clients')
-            ->where('id','=',"$value")
+            ->where('id', '=', "$value")
             ->get();
 
         $deliveryTotals = DB::table('delivery_lines')
@@ -22,7 +21,7 @@ class ClientsDeliveriesRepository implements Report
 
         $clientsDeliveries = DB::table('deliveries')
             ->groupBy('deliveries.id')
-            ->join('addresses', 'addresses.id','=','deliveries.address_id')
+            ->join('addresses', 'addresses.id', '=', 'deliveries.address_id')
             ->join('routes', 'routes.id', '=', 'deliveries.route_id')
             ->joinSub($deliveryTotals, 'delivery_total', function ($join) {
                 $join->on('deliveries.id', '=', 'delivery_total.delivery_id');
@@ -32,10 +31,8 @@ class ClientsDeliveriesRepository implements Report
             ->get();
         $clientsDeliveries = json_decode($clientsDeliveries);
 
-
-
         $deliveries = [];
-        foreach ($clientsDeliveries as $delivery){
+        foreach ($clientsDeliveries as $delivery) {
             $deliveries[] = new DeliveriesInfo(
                 $delivery->title,
                 $delivery->date,
@@ -43,10 +40,6 @@ class ClientsDeliveriesRepository implements Report
                 $delivery->status
             );
         }
-
-//        echo "<pre>";
-//        var_dump($deliveries);
-//        die;
 
         return [$deliveries, $client];
     }

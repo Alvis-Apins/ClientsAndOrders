@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 class OrderTypeRepository implements Report
 {
 
-    public function getReportData():array
+    public function getReportData(): array
     {
         $clientsLiquidOrders = DB::table('clients')
             ->join('addresses', 'client_id', '=', 'clients.id')
@@ -45,9 +45,6 @@ class OrderTypeRepository implements Report
                 }
             }
         }
-//        echo "<pre>";
-//        var_dump(collect([$clientsInfo]));
-//        die;
         return $clientsInfo;
     }
 }

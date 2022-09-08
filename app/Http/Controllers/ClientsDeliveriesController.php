@@ -11,10 +11,6 @@ class ClientsDeliveriesController extends Controller
     {
         $deliveriesInfo = $clientsDeliveriesService->execute();
 
-//        echo "<pre>";
-//        var_dump($deliveries[0]);
-//        die;
-
         return view('clients-deliveries', [
             'deliveries' => $deliveriesInfo[0],
             'clients' => $deliveriesInfo[1]

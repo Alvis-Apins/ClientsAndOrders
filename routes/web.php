@@ -12,10 +12,10 @@ Route::get('/', function () {
 });
 
 Route::controller(ClientListController::class)->group(function () {
-        Route::get('/clients-list', 'index');
-        Route::post('/clients-list/address', 'show')->name('clients-list');
-        Route::post('/clients-list/deliveries', 'redirect')->name('deliveries');
-    });
+    Route::get('/clients-list', 'index');
+    Route::post('/clients-list/address', 'show')->name('clients-list');
+    Route::post('/clients-list/deliveries', 'redirect')->name('deliveries');
+});
 
 Route::get('/clients-deliveries', [ClientsDeliveriesController::class, 'index']);
 

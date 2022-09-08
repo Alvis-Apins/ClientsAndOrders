@@ -9,15 +9,18 @@ class Delivery extends Model
 {
     use HasFactory;
 
-    public function address(){
+    public function address()
+    {
         return $this->belongsTo(Address::class);
     }
 
-    public function deliveryLine(){
+    public function deliveryLine()
+    {
         return $this->hasMany(DeliveryLine::class);
     }
 
-    public function route(){
-        return$this->belongsTo(Route::class);
+    public function route()
+    {
+        return $this->belongsTo(Route::class);
     }
 }
